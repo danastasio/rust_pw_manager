@@ -100,9 +100,7 @@ fn get_from_db(pw_key: String) -> Result<String> {
     let conn = Connection::open("passwords.db").expect("Could not open DB");
     let mut stmt = conn.prepare("SELECT key,password from pw_store where key=:key;").expect("Could not prepare query");
     let result_iter = stmt.query_map(&[(":key", pw_key.to_string().as_str())], |row| {
-        Ok(Pw {
-            encrypted_password: row.get(1)?,
-        })
+        Ok(Pw { encrypted_password: row.get(1)? })
     })?;
     let mut encrypted_pw = String::new();
 
