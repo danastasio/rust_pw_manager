@@ -10,11 +10,21 @@ You will need an existing database, which you can initialize with the following:
 touch password.db && echo "create table pw_store (key TEXT, password TEXT);" | sqlite3 password.db
 ```
 
-Then just run the program 
+Then just run the program.
 
 ```bash
 pwstore
 ```
+
+If you  want to comile from source yourself, it is very easy. You need [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) installed on your system. Then just cd into the directory and run 
+
+```bash
+cargo build --release
+```
+
+And you will get a nice shiney binary.
+
+I'm making a rather bold assumption that you're using linux. Can't help you if you're installing on Windows or Mac, but I trust if you've made it this far you can probably figure it out and don't really need this guide ¯\_(ツ)_/¯
 
 ## Specificitcs
 
